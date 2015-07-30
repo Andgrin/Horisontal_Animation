@@ -1,0 +1,16 @@
+.left:hover {
+   left: 0;
+   transition: left 1s;
+   cursor:pointer;
+}
+
+.right:hover {
+   
+   
+   cursor:pointer;
+}
+
+button:hover .right {
+   right: 0;
+   transition: right 1s;
+}
