@@ -19,7 +19,7 @@ function childClass () {
 	$(".wrap").children().addClass("new");
 	$("ul li:first-child").removeClass("new").addClass("actual");
 	console.log("classes were added");
-};
+}
 
 function getCurrentAnimationElements(isPrev) {
 
@@ -39,7 +39,7 @@ function initialPosition() {
 	$(".new .right").css("right", "-50vw");
 	$(".inner-shadow").css("opacity", 0);
 	console.log("outside windows were positioned");
-};
+}
 
 function actualOldAnimateMoveToBack () {
    var elements = getCurrentAnimationElements(true);
@@ -49,6 +49,7 @@ function actualOldAnimateMoveToBack () {
    elements.left.animate({ top: "10vh", left: "10vw", height: "80vh", width: "40vw" }, BACK_ANIMATION_DURATION, 'easeOutCirc'); 
    elements.right.animate({ top: "10vh", right: "10vw", height: "80vh", width: "40vw" }, BACK_ANIMATION_DURATION , 'easeOutCirc'); //уменьшить размеры окна 
 }
+
 function actualOldAnimateMoveToFront () {
    var elements = getCurrentAnimationElements(true);
 
@@ -64,6 +65,7 @@ function actualNewAnimateMoveInside () {
    elements.left.animate({left: 0}, FRONT_ANIMATION_DURATION, 'easeInOutQuart');
    elements.right.animate({right: 0}, FRONT_ANIMATION_DURATION, 'easeInOutQuart'); //сдвинуть окна
 }
+
 function actualNewAnimateMoveOutside () {
    var elements = getCurrentAnimationElements(false);
 
@@ -74,13 +76,13 @@ function actualNewAnimateMoveOutside () {
 function frontAnimation () {
    actualOldAnimateMoveToBack();
 	actualNewAnimateMoveInside();
-};
+}
 
 
 function backAnimation () {
    actualNewAnimateMoveOutside();
    actualOldAnimateMoveToFront();
-};
+}
 
 function footerUpAnimation () {
    actualOldAnimateMoveToBack();
